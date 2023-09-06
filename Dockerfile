@@ -1,4 +1,4 @@
-FROM masakifujiwara1/ros2:foxy
+FROM masakifujiwara1/ros2:humble
 
 WORKDIR /home
 ENV HOME /home
