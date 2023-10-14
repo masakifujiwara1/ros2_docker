@@ -75,22 +75,3 @@ BSD
 
 ## Tested on ...
 - ubuntu 20.04 LTS
-
-writing
-
-## Docker tags on hub.docker.com
-writing
-
-## Related Projects
-* https://github.com/masakifujiwara1/cuda_pytorch_ros2_docker
-  * under maintenance
-* https://github.com/masakifujiwara1/cuda_pytorch_ros1_docker
-  * under maintenance
-* https://github.com/masakifujiwara1/ros1_docker
-  * under maintenance
-
-## License
-BSD
-
-## Tested on ...
-- ubuntu 20.04 LTS
