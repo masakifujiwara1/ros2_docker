@@ -2,6 +2,10 @@
 「Ubuntu + ROS2 」を含むDocker環境を提供します.  
 Provides a Docker environment including "Ubuntu + ROS2".
 
+## Prerequisites
+- docker installed [How to Install(ubuntu20.04)](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-ja)
+- nvidia-smi must be available (When using gpu)
+
 ## Quick Start
 Run the docker container. Add the `--rm` option depending on the situation.  
 ※ If you do not want to save your changes, it is recommended to use the `--rm` option.
