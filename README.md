@@ -12,7 +12,7 @@ Run the docker container. Add the `--rm` option depending on the situation.
 ## After the second
 launch (Rename containers as necessary)
 ```
-docker start my-humble
+docker start my-<branch name>
 ```
 login
 ```
@@ -20,7 +20,7 @@ login
 ```
 close (Rename containers as necessary)
 ```
-docker stop my-humble
+docker stop my-<branch name>
 ```
 
 ## Build (option)
