@@ -1,4 +1,4 @@
-FROM masakifujiwara1/ros2:humble
+FROM masakifujiwara1/ros2:humble-orne-box3-sim
 
 WORKDIR /home
 ENV HOME /home
