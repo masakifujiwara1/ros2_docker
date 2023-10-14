@@ -39,7 +39,7 @@ docker stop my-<branch name>
 ## Build (option)
 If you want to customize `.bashrc` or `.vimrc`, please change the files in config/.  
 After the change, execute the following command.
-※ We recommend replacing files with [file sharing](https://github.com/masakifujiwara1/ros2_docker/edit/main/README.md#file-sharing-hotst-----docker).
+※ We recommend replacing files with [file sharing](---).
 ```
 ./build.sh
 ```
