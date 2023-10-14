@@ -41,7 +41,7 @@ You can communicate in both directions. However, if something in the folder is d
 ## Build (option)
 If you want to customize `.bashrc` or `.vimrc`, please change the files in config/.  
 After the change, execute the following command.  
-※ We recommend replacing files with [file sharing](---).
+※ We recommend replacing files with [file sharing](https://github.com/masakifujiwara1/ros2_docker/blob/main/README.md#file-sharing-hotst-----docker).
 ```
 ./build.sh
 ```
