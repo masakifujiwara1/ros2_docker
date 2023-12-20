@@ -1,3 +1,3 @@
 #!/bin/bash
 
-eval "docker container exec -it my-foxy bash"
+eval "docker container exec -it my-cuda bash"

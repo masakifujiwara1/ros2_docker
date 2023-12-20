@@ -100,17 +100,17 @@ fi
 #    . /etc/bash_completion
 #fi
 
-source /opt/ros/foxy/setup.bash
-source ~/ros2_ws/install/setup.bash
+# source /opt/ros/foxy/setup.bash
+# source ~/ros2_ws/install/setup.bash
 
-export ROS_WORKSPACE=${HOME}/ros2_ws
+# export ROS_WORKSPACE=${HOME}/ros2_ws
 
-function ros_make() {
-    dir=$PWD;
-    cd $ROS_WORKSPACE;
-    colcon build --symlink-install;
-    . install/local_setup.bash;
-    cd $dir;
-}
+# function ros_make() {
+#     dir=$PWD;
+#     cd $ROS_WORKSPACE;
+#     colcon build --symlink-install;
+#     . install/local_setup.bash;
+#     cd $dir;
+# }
 	
 export TURTLEBOT3_MODEL=burger    
