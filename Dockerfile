@@ -1,4 +1,5 @@
-FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
+
+FROM masakifujiwara1/ros2:humble
 
 WORKDIR /home
 # ENV HOME /home

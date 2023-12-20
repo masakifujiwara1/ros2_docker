@@ -2,6 +2,7 @@
 「Ubuntu + ROS2 」を含むDocker環境を提供します.  
 Provides a Docker environment including "Ubuntu + ROS2".
 
+
 ## Prerequisites
 - docker installed. [How to Install(ubuntu20.04)](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-ja)
 - nvidia-smi must be available (When using gpu). [How to Install(ubuntu20.04)](https://takake-blog.com/ubuntu-2004-install-nvidiacontainertoolkit/)
@@ -22,6 +23,7 @@ xhost +local:
 ## After the second
 launch (Rename containers as necessary)
 ```
+
 xhost +local:
 docker start my-<branch name>
 ```
@@ -31,6 +33,7 @@ login
 ```
 close (Rename containers as necessary)
 ```
+
 docker stop my-<branch name>
 ```
 ## File sharing (hotst <---> docker)
@@ -51,6 +54,7 @@ The commands are introduced below.
 If you want to customize `.bashrc` or `.vimrc`, please change the files in config/.  
 After the change, execute the following command.  
 ※ We recommend replacing files with [file sharing](https://github.com/masakifujiwara1/ros2_docker/blob/main/README.md#file-sharing-hotst-----docker).
+
 ```
 ./build.sh
 ```
@@ -60,6 +64,7 @@ After the change, execute the following command.
 writing
 
 ## Docker tags on hub.docker.com
+
 [dockerhub](https://hub.docker.com/repository/docker/masakifujiwara1/ros2/tags?page=1&ordering=last_updated)
 
 ## Related Projects
@@ -75,4 +80,3 @@ BSD
 
 ## Tested on ...
 - ubuntu 20.04 LTS
-# cuda_docker
