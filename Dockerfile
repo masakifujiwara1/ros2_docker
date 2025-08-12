@@ -95,6 +95,10 @@ RUN mkdir -p /home/$USER_NAME/ros2_ws/src && \
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc && \
 echo "source /home/$USER_NAME/ros2_ws/install/setup.bash" >> ~/.bashrc
 
+RUN git clone https://github.com/masakifujiwara1/tmux_config.git && \
+    cp tmux_config/.tmux.conf ~/ && \
+    rm -rf tmux_config
+
 ENV NVIDIA_VISIBLE_DEVICES ${NVIDIA_VISIBLE_DEVICES:-all}
 ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
