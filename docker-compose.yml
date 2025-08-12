@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  humble-cpu:
+    container_name: my-humble-cpu
+    image: masakifujiwara1/ros2:my-humble
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    ipc: host
+    privileged: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=${XAUTH:-}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./docker_share:/home/host_files
+      - /dev:/dev
+      - ${XAUTH:-/tmp/.docker.xauth}:${XAUTH:-/tmp/.docker.xauth}
+      - /home/${USER}/.ssh:/home/ubuntu/.ssh
+      - /home/${USER}/.gitconfig:/home/ubuntu/.gitconfig
+    stdin_open: true
+    tty: true
+
+  humble-gpu:
+    container_name: my-humble-gpu
+    image: masakifujiwara1/ros2:my-humble
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    ipc: host
+    privileged: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=${XAUTH:-}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./docker_share:/home/host_files
+      - /dev:/dev
+      - ${XAUTH:-/tmp/.docker.xauth}:${XAUTH:-/tmp/.docker.xauth}
+      - /home/${USER}/.ssh:/home/ubuntu/.ssh
+      - /home/${USER}/.gitconfig:/home/ubuntu/.gitconfig
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    stdin_open: true
+    tty: true
