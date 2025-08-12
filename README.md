@@ -13,29 +13,15 @@ Run the docker container. Add the `--rm` option depending on the situation.
 - use gpu
 ```
 xhost +local:
-./run_gpu.sh
+docker compose up gpu
+./login.sh gpu
 ```
 - without gpu
 ```
-./run.sh
+docker compose up cpu
+./login.sh cpu
 ```
 
-## After the second
-launch (Rename containers as necessary)
-```
-
-xhost +local:
-docker start my-<branch name>
-```
-login
-```
-./login.sh
-```
-close (Rename containers as necessary)
-```
-
-docker stop my-<branch name>
-```
 ## File sharing (hotst <---> docker)
 The folder ~/ros2_docker/docker_share on the host PC and the folder ~/host_files on docker are bind-mounted.  
 You can communicate in both directions. However, if something in the folder is deleted, it will be reflected in both.
@@ -47,11 +33,11 @@ The commands are introduced below.
 - rs : cd ~/ros2_ws/src
 - bashrc : source ~/.bashrc
 - ros_make : colcon build --symlink-install is executed no matter what directory you are in
-### .vimrc
-- set number
+### .tmux.conf
+writing
 
 ## Build (option)
-If you want to customize `.bashrc` or `.vimrc`, please change the files in config/.  
+If you want to customize `.bashrc` etc... , please change the files in config/.  
 After the change, execute the following command.  
 ※ We recommend replacing files with [file sharing](https://github.com/masakifujiwara1/ros2_docker/blob/main/README.md#file-sharing-hotst-----docker).
 

@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  humble-cpu:
+  cpu:
     container_name: my-humble-cpu
     image: masakifujiwara1/ros2:my-humble
     build:
@@ -24,7 +24,7 @@ services:
     stdin_open: true
     tty: true
 
-  humble-gpu:
+  gpu:
     container_name: my-humble-gpu
     image: masakifujiwara1/ros2:my-humble
     build:
