@@ -69,6 +69,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3-dev \
     python3-pip \
+    xdg-utils \
+    nautilus \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -93,7 +95,15 @@ RUN mkdir -p /home/$USER_NAME/ros2_ws/src && \
     rosdep update
 
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc && \
-echo "source /home/$USER_NAME/ros2_ws/install/setup.bash" >> ~/.bashrc
+    echo "source /home/$USER_NAME/ros2_ws/install/setup.bash" >> ~/.bashrc && \
+    echo "" >> ~/.bashrc && \
+    echo "function ros_make() {" >> ~/.bashrc && \
+    echo "    dir=\$PWD;" >> ~/.bashrc && \
+    echo "    cd \$ROS_WORKSPACE;" >> ~/.bashrc && \
+    echo "    colcon build --symlink-install;" >> ~/.bashrc && \
+    echo "    . install/local_setup.bash;" >> ~/.bashrc && \
+    echo "    cd \$dir;" >> ~/.bashrc && \
+    echo "}" >> ~/.bashrc
 
 RUN git clone https://github.com/masakifujiwara1/tmux_config.git && \
     cp tmux_config/.tmux.conf ~/ && \
